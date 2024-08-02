@@ -1,0 +1,47 @@
+[
+    {
+        "key": "relevance",
+        "criteria": {
+            "criteria": "Does the response accurately address the core aspects of the question, providing relevant information without straying off-topic?",
+            "score1_description": "The response is off-topic or incorrect, failing to address the core aspects of the question.",
+            "score2_description": "The response partially addresses the question but contains significant inaccuracies or irrelevant information.",
+            "score3_description": "The response provides relevant information but lacks depth or contains minor inaccuracies.",
+            "score4_description": "The response is accurate and mostly comprehensive, addressing the key elements of the question with minor omissions.",
+            "score5_description": "The response fully addresses the question with accurate, relevant, and comprehensive information."
+        }
+    },
+    {   
+        "key": "clarity",
+        "criteria": {
+            "criteria": "Is the response clear, well-structured, and easy to understand? Does it present the information in a coherent manner?",
+            "score1_description": "The response is confusing, poorly structured, or difficult to understand.",
+            "score2_description": "The response is somewhat clear but lacks coherence or has confusing elements.",
+            "score3_description": "The response is generally clear but may have some minor issues with flow or coherence.",
+            "score4_description": "The response is clear, well-structured, and easy to follow, with only minor room for improvement.",
+            "score5_description": "The response is exceptionally clear, coherent, and well-organized, making the information easy to understand."
+        }
+    },
+    {
+        "key": "practicality",
+        "criteria": {
+            "criteria": "Does the response suggest practical and applicable solutions that are well-suited to the scenario?",
+            "score1_description": "The response offers solutions or strategies that are impractical or not applicable to the scenario.",
+            "score2_description": "The response suggests somewhat applicable solutions but may lack practicality or relevance to the specific situation.",
+            "score3_description": "The response provides generally applicable and practical solutions, though some may be less relevant or feasible.",
+            "score4_description": "The response suggests practical and applicable solutions that are well-suited to the scenario, with minor exceptions.",
+            "score5_description": "The response provides highly practical, relevant, and applicable solutions that are directly tailored to the scenario."
+        }
+    },
+    {
+        "key": "instruction_following",
+        "criteria": {
+            "criteria": "Does the response follow all the instructions provided in the question and fulfill the tasks or requests as specified?",
+            "score1_description": "The response fails to follow the instructions, ignoring key tasks or requirements, and does not fulfill the expected output.",
+            "score2_description": "The response partially follows the instructions, addressing some but not all tasks or requirements, with significant omissions or errors.",
+            "score3_description": "The response generally follows the instructions, addressing most tasks and requirements, but may miss minor details or have some inaccuracies.",
+            "score4_description": "The response mostly follows the instructions, accurately addressing almost all tasks and requirements, with only minor omissions or deviations.",
+            "score5_description": "The response fully follows the instructions, accurately and comprehensively addressing all tasks and requirements with no omissions or errors."
+        }
+
+    }
+]

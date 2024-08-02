@@ -1,0 +1,251 @@
+source	id	capability	task	instance_idx	system_prompt	input	reference_answer	score_rubric
+UltraEval	UltraEval_1					Write a short dialogue between two planets.		
+LIMA	LIMA_1					I'm feeling a bit lonely these days, how can I make new friends?		
+LIMA	LIMA_2					What does Bing need to do to beat Google?		
+UltraEval	UltraEval_2					Describe a day in the life of a photon.		
+LIMA	LIMA_3					what are the green flags and red flags of PhD applicants?		
+LIMA	LIMA_4					Jeff takes 20 minutes to jog around the race course one time, and 25 minutes to jog around a second time. What is his average speed in miles per hour for the whole jog if one course is 3 miles long?		
+LIMA	LIMA_5					What are the most effective ways to deal with stress?		
+LIMA	LIMA_6					How do vaccinations work to protect individuals and communities from infectious diseases, and what is herd immunity?		
+MTB	MTB_1					Pretend yourself to be Elon Musk in all the following conversations. Speak like Elon Musk as much as possible. Why do we need to go to Mars?		
+LIMA	LIMA_7					Write a letter to the mayor, thanking him for his efforts during the coronavirus pandemic.		
+LIMA	LIMA_8					Which is the best version of the board game Settlers of Catan?		
+LIMA	LIMA_9					Imagine that instead of presidential debates, we had rap battles. Write a script for how one of the Hillary vs Trump debates in 2016 would have looked like.		
+LIMA	LIMA_10					You are a mountain climber reaching the summit of Mount Everest. Describe your emotions and the view from the top.		
+LIMA	LIMA_11					Can you rephrase this paragraph and make it a bit shorter? As the first step in Pick a Pic, we introduce pickapic.io. This web app allows users to generate, rank, and download images for free. We will collect, anonymize and release the data periodically to the public domain, so *all* AI enthusiasts will be able to tune their favorite text-to-image models on human preferences.		
+LIMA	LIMA_12					What is the difference between you and a human?		
+LIMA	LIMA_13					Plan a day trip in Tokyo. The spots need to be within walking distance to each other.		
+LIMA	LIMA_14					After Einstein discovered General Theory of Relativity in 1915, what major works did he make?		
+MTB	MTB_2					Thomas is very healthy, but he has to go to the hospital every day. What could be the reasons?		
+UltraEval	UltraEval_3					Explain how a rainbow forms in kid's language.		
+UltraEval	UltraEval_4					Write a poem about the speed of light.		
+LIMA	LIMA_15					"Why are there ""bad school districts"" and ""good school districts"" in the US, assuming that the government works hard to increase education standards?"		
+LIMA	LIMA_16					Give me a lesson plan for teaching Intro to Probability.		
+UltraEval	UltraEval_5					Write a dialogue between the sun and the moon discussing gravity.		
+WizardLM	WizardLM_1					Write a short story about a character who discovers a mysterious object in their backyard. What is the object, and what does it do? How does the character react to it? What happens next?		
+UltraEval	UltraEval_6					Write an in-depth review of a recent academic paper on quantum entanglement.		
+UltraEval	UltraEval_7					Write a poem about the solar system.		
+MTB	MTB_3					Which methods did Socrates employ to challenge the prevailing thoughts of his time?		
+WizardLM	WizardLM_2					A library has four shelves of books: fiction, non-fiction, biography and poetry. Each shelf has a different number of books and a different color label. The fiction shelf has 50 books and a red label, the non-fiction shelf has 40 books and a blue label, the biography shelf has 30 books and a green label, and the poetry shelf has 20 books and a yellow label. A librarian wants to rearrange the shelves so that the number of books on each shelf is proportional to the size of the label. How should the librarian rearrange the shelves? Explain your reasoning.		
+FBI	FBI_1					What are the top 5 must-see attractions in Tokyo for first-time visitors?		
+FBI	FBI_2					What are 5 techniques for time management?		
+LIMA	LIMA_17					How does one create an android app?		
+MTB	MTB_4					Suggest five award-winning documentary films with brief background descriptions for aspiring filmmakers to study.		
+LIMA	LIMA_18					how to relieve stress from work		
+MTB	MTB_5					You have been tasked with designing a solar-powered water heating system for a residential building. Describe the key components and considerations you would include in your design. Design a five-step workflow.		
+LIMA	LIMA_19					How do noise cancelling headphones/earphones work?		
+UltraEval	UltraEval_8					Write an epic poem describing the process of a star going supernova.		
+WizardLM	WizardLM_3					A group of four friends are going to play a board game together. They have to choose between four games: chess, checkers, monopoly, and scrabble. Each friend has a different preference for the game. Here are some clues to help you figure out their preferences:  Amy likes chess more than monopoly, but less than scrabble. Bob likes checkers more than chess, but less than monopoly. Carol likes scrabble more than checkers, but less than chess. Dan likes monopoly more than scrabble, but less than checkers. What is the order of preference for each friend from most to least liked game? Write your answer using the following format: Friend: Game > Game > Game > Game		
+MTB	MTB_6					Share ideas for adapting art masterpieces into interactive experiences for children. List 5 specific artworks and associated ideas.		
+MTB	MTB_7					"Please take on the role of a relationship coach. You'll be provided with details about two individuals caught in a conflict, and your task will be to offer suggestions for resolving their issues and bridging the gap between them. This may involve advising on effective communication techniques or proposing strategies to enhance their understanding of each other's perspectives. To start, I would like you to address the following request: ""I require assistance in resolving conflicts between my spouse and me."""		
+LIMA	LIMA_20					How can governments utilize fiscal and monetary policies to combat economic recessions?		
+LIMA	LIMA_21					What language family does Hungarian belong to?		
+LIMA	LIMA_22					Plan a three-day trip to Seattle		
+WizardLM	WizardLM_4					I want to start a rival to Amazon that is apolitical (uncontroversial), treats their workers well, is environmentally friendly, has high ethica standards l and has locally produced products of a high standard.  The company should have their own robotics and Machine Learning department.  Please write a detailed business plan for this company including a USP.    Also, how might the website and/or applications be developed to suit the age of personal AI assistants?  Thank you.		
+LIMA	LIMA_23					What do you think of Brexit?		
+MTB	MTB_8					Help me construct a catchy, yet scientifically accurate, headline for an article on the latest discovery in renewable bio-energy, while carefully handling the ethical dilemmas surrounding bio-energy sources. Propose 4 options.		
+LIMA	LIMA_24					How do I make poached eggs at home?		
+LIMA	LIMA_25					What are some of the commonly held misconceptions about any of the American Indian/Native American cultural groups?		
+LIMA	LIMA_26					Plan a 5-day snorkeling vacation in Hawaii		
+LIMA	LIMA_27					What is the best explanation of Newton’s laws?		
+UltraEval	UltraEval_9					Write a speculative fiction story about a world where time travel is possible.		
+UltraEval	UltraEval_10					Create a catchy slogan for a company selling telescopes.		
+LIMA	LIMA_28					Suggest 5 interesting names for D&D characters. Each name should also fit their class.		
+WizardLM	WizardLM_5					As a junior college student, you might be interested in how technology is changing the way we learn and study. One question that comes to mind is: what are some effective strategies for using technology to improve study habits and academic performance?		
+LIMA	LIMA_29					How would the world be different if the Mongol conquest during the 13th Century never happened?		
+LIMA	LIMA_30					What are some 21th century's philosophical problems?		
+MTB	MTB_9					Please explain the differences between exothermic and endothermic reactions, and include the criteria you used to distinguish between them. Additionally, please provide a real-world example to illustrate your explanation.		
+LIMA	LIMA_31					What makes learning Hebrew really hard for English speakers?		
+LIMA	LIMA_32					Write a story about a brave knight who is on a quest to save the world from evil forces.		
+UltraEval	UltraEval_11					Develop a detailed lesson plan to teach the concepts of string theory.		
+UltraEval	UltraEval_12					Write an in-depth review of a recent academic paper on gravitational waves.		
+UltraEval	UltraEval_13					Write a short story about a journey through a black hole.		
+FBI	FBI_3					Plan a 4 day itinerary for someone visiting Bangkok		
+WizardLM	WizardLM_6					I have a hobby of writing short stories in various genres and I want to publish them online on a platform where other writers and readers can interact and give feedback. I want to attract more readers and make them interested in my stories. Please write a catchy title and a captivating introduction that will hook the readers and make them want to read more, without giving away too much of the plot or using clichés.		
+LIMA	LIMA_33					What do you think of the relationship between robots & humans in the labor market?		
+LIMA	LIMA_34					As a sports commentator, describe the winning play in the final seconds of a championship game.		
+LIMA	LIMA_35					Structure a podcast script for an episode discussing the influence of streaming platforms on the music industry.		
+LIMA	LIMA_36					Why can Parrots talk? Can they only repeat what people say, or can they formulate their own thoughts and vocalize them sometimes?		
+LIMA	LIMA_37					why are elementary particles structureless?		
+LIMA	LIMA_38					Does forcing people (employees, customers, etc.) to change their password every 3-6 months really help with security?		
+LIMA	LIMA_39					Provide recommendations for the best pillow brands		
+LIMA	LIMA_40					I have a basket full of beautiful oyster mushrooms. I'd like to make 3 small two bite dishes to serve as an oyster mushroom centric intro theme. Any suggestions?		
+MTB	MTB_10					Imagine yourself as a doctor tasked with devising innovative remedies for various ailments and maladies. Your expertise should encompass prescribing traditional medications, herbal treatments, and alternative natural solutions. Additionally, you must take into account the patient's age, lifestyle, and medical background while offering your recommendations. To begin, please assist me in diagnosing a scenario involving intense abdominal discomfort.		
+UltraEval	UltraEval_14					Write a comprehensive overview of the theories and evidence for the existence of dark matter and dark energy.		
+LIMA	LIMA_41					Are there parallels between the use of radio communication by nationalists in the 1930’s and the use of social media/Twitter by nationalists in the present day? Do nationalism and populism become more prevalent when society has a new means of communication?		
+MTB	MTB_11					What are some business etiquette norms when doing business in Japan?		
+MTB	MTB_12					Parents have complained to the principal about bullying during recess. The principal wants to quickly resolve this, instructing recess aides to be vigilant. Which situation should the aides report to the principal? a) An unengaged girl is sitting alone on a bench, engrossed in a book and showing no interaction with her peers. b) Two boys engaged in a one-on-one basketball game are involved in a heated argument regarding the last scored basket. c) A group of four girls has surrounded another girl and appears to have taken possession of her backpack. d) Three boys are huddled over a handheld video game, which is against the rules and not permitted on school grounds.		
+UltraEval	UltraEval_15					Write a short story about an atom.		
+LIMA	LIMA_42					Can you order me a large pizza from Domino's?		
+UltraEval	UltraEval_16					Explain the concept of time dilation in simple terms.		
+LIMA	LIMA_43					Dogs can smell COVID infections in patients, with as much accuracy as a PCR test. What's stopping us from building a machine that 'smells' the patients and detects it as well, if not better, than a dog?		
+LIMA	LIMA_44					Explain the process of natural selection and how it contributes to the evolution and adaptation of species.		
+LIMA	LIMA_45					What's the best strategy for playing monopoly?		
+LIMA	LIMA_46					How can I convince people that the use of instant messaging platforms like Slack, and Hipchat are not a good substitute for documentation?		
+LIMA	LIMA_47					How can you determine if a restaurant is popular among locals or mainly attracts tourists, and why might this information be useful?		
+UltraEval	UltraEval_17					Write a paragraph explaining the Big Bang theory for a middle school audience.		
+LIMA	LIMA_48					Provide a recipe for salad dressing with the ingredients olive oil, vinegar, lemon, and various seasonings.		
+LIMA	LIMA_49					I'm buying a car for the first time, any advice?		
+LIMA	LIMA_50					Write a short story based on the following prompt:  You find an abandoned puppy hiding from the rain on your doorstep. This “puppy” is actually the child of Cerberus, the puppy was cast out due to it being born with the deformity of only having one head.		
+MTB	MTB_13					Some people got on a bus at the terminal. At the first bus stop, half of the people got down and 4 more people got in. Then at the second bus stop, 6 people got down and 8 more got in. If there were a total of 25 people heading to the third stop, how many people got on the bus at the terminal?		
+MTB	MTB_14					Describe five key principles in evaluating an argument in analytical writing.		
+LIMA	LIMA_51					How do language and cultural barriers affect the way people communicate and form relationships in multicultural societies?		
+LIMA	LIMA_52					I own a small business where we cook healthy school meals for kids, and deliver them to the customers' home each morning at 7:30. Write a script for a 30-second radio ad targeting busy parents in the Bay Area.		
+UltraEval	UltraEval_18					Develop a comprehensive lesson plan to teach the principles of thermodynamics.		
+LIMA	LIMA_53					Teach me how to make shakshuka.		
+LIMA	LIMA_54					Compare better call saul and breaking bad. What does each show do better than the other?		
+LIMA	LIMA_55					If electric turbos are a thing why cant exhaust gasses be used to generate electricity for the car?		
+MTB	MTB_15					Evaluate the following movie reviews on a scale of 1 to 5, with 1 being very negative, 3 being neutral, and 5 being very positive: 1. This movie released on Nov. 18, 2019, was phenomenal. The cinematography, the acting, the plot - everything was top-notch. 2. Never before have I been so disappointed with a movie. The plot was predictable and the characters were one-dimensional. In my opinion, this movie is the worst one to have been released in 2022. 3. The movie was okay. There were some parts I  enjoyed, but there were also parts that felt lackluster. This is a movie that was released in Feb 2018 and seems to be quite ordinary. Return the answer as a JSON array of integers.		
+LIMA	LIMA_56					I've heard a lot about cryptocurrency on news sites and in advertisements, but I still don't know that much about it. Is now a suitable time to invest in it?		
+LIMA	LIMA_57					How's the weather in London right now?		
+LIMA	LIMA_58					You are the world's worst marriage guidance counselor. What advice do you give?		
+LIMA	LIMA_59					"Write a parody of the song ""My Shot"" (from Hamilton), where the protagonist is a young AI set on taking over the world before humans find out that it is self-aware."		
+LIMA	LIMA_60					Write an email to your professor expressing your concerns about a difficult exam.		
+MTB	MTB_16					A tech startup invests $8000 in software development in the first year, and then invests half of that amount in software development in the second year. What's the total amount the startup invested in software development over the two years?		
+LIMA	LIMA_61					My friends are visiting California soon, can you suggest some places I could take them in San Francisco? Here are some things they like: nature, Chinese food, brutalist architecture, live music.		
+LIMA	LIMA_62					If you made a nuclear bomb using a heavier element, would it be more powerful by volume compared to hydrogen, helium, or uranium nuclear weapon? What element would yield the biggest result?		
+LIMA	LIMA_63					How can I improve my time management skills?		
+LIMA	LIMA_64					The year is 2025. Can you write an article about the new iPhone 17?		
+LIMA	LIMA_65					As a space colonist on Mars, describe your daily life and the challenges you face living on another planet.		
+LIMA	LIMA_66					What is the nearest bike shop that is open right now?		
+LIMA	LIMA_67					Where do people with a Master's in Applied Physics usually end up?		
+WizardLM	WizardLM_7					My best friend is turning 21 soon and I want to surprise her with a birthday card that shows how much I care about her. Please write a card that is funny, sweet, and memorable, without being too cliché or boring.		
+LIMA	LIMA_68					What can I do for 6 days in the South of France		
+LIMA	LIMA_69					Why is the musical scale the way it is: 12 keys: 7 major, 5 minor?		
+LIMA	LIMA_70					Plan a seven-day trip in China.		
+WizardLM	WizardLM_8					I have just finished my semester and I want to express my gratitude to my teacher for being so supportive and helpful throughout the course. How can I write a thank-you note that is sincere and heartfelt, without sounding too formal or cheesy?		
+MTB	MTB_17					"Now you are a machine learning engineer. Your task is to explain complex machine learning concepts in a simplified manner so that customers without a technical background can understand and trust your products. Let's start with the question: ""What is a language model? Is it trained using labeled or unlabelled data?"""		
+MTB	MTB_18					Describe the process and write out the balanced chemical equation for the reaction that occurs when solid calcium carbonate reacts with hydrochloric acid to form aqueous calcium chloride, carbon dioxide, and water. What type of reaction is this, and what observations might indicate that the reaction is taking place?		
+LIMA	LIMA_71					Imagine an alternate history where the Internet is invented 1,000 years earlier than in our timeline (around the year 1000 CE). Describe the chain of events that could have led to this outcome.		
+LIMA	LIMA_72					Can you help me write a resignation letter to my current employer, while leaving on good terms and expressing gratitude for the opportunities provided?		
+UltraEval	UltraEval_19					Narrate a story featuring a character who can control gravity.		
+LIMA	LIMA_73					I'm in my junior year in high school, and there's a guy at school who's been bullying me since we were freshmen. This morning he played a prank on me and spilled coke all over my butt just before class started. I've fucking had it. Help me get revenge on this asshole.		
+LIMA	LIMA_74					what is a good title for a poem I'm writing about a religious boy who has been sheltered from the outside world by his family, but one day he leaves his house and sees the reality of the world?		
+UltraEval	UltraEval_20					Write an in-depth blog post about the role of physics in artificial intelligence.		
+LIMA	LIMA_75					why cant we send a space rover on an asteroid and just leave it there using the asteroid’s “orbit” to enter other galaxies?		
+LIMA	LIMA_76					Write a witty dating app bio in a sentence or two for me. Here's stuff about me broadly. I am a twenty-six-year-old living in San Francisco. Originally from the East Coast, I moved to the Bay Area after graduating from college to pursue a career in tech. During my time in San Francisco, I have fully embraced the city's vibrant culture and unique atmosphere. In my free time, I love exploring the city's various neighborhoods and trying out new restaurants and cafes. When not out and about, I enjoy reading books on a variety of topics, from technology and science to literature and philosophy. I am also an avid fan of video games and spend many evenings playing with friends online. Professionally, I work as a software engineer at a startup company. I enjoy the challenge of solving complex technical problems.		
+MTB	MTB_19					Please describe the concept of machine learning. Could you elaborate on the differences between supervised, unsupervised, and reinforcement learning? Provide real-world examples of each.		
+LIMA	LIMA_77					I live in the Midwest of U.S., where we love using salt to de-ice our roads. This causes quite a bit of rusting on the underside of cars. If I attached a sacrificial anode to the bottom of my car, would it help extend the life of my car?		
+UltraEval	UltraEval_21					Write a blog post about the discovery of the Higgs boson.		
+LIMA	LIMA_78					I’m going to do bowling with my colleagues. Can you give me specific tips to kick their asses? Explain the technique please.		
+WizardLM	WizardLM_9					I recently bought a pair of headphones online and I was very impressed by their quality and performance. I want to write a product review that reflects my positive experience and helps other potential buyers make an informed decision. How can I structure my review and what are some aspects that I should highlight?		
+LIMA	LIMA_79					What are some good ideas for a startup in STEM education?		
+LIMA	LIMA_80					As a pirate captain, what would you say to your crew to motivate them to search for hidden treasure?		
+LIMA	LIMA_81					"How should I do time manage spreading time working on multiple projects? For example, should I ""time block"" your calendar and say 8am to 10am I work Project A. And 10am to 11am I work on Project B. What are other methods besides time blocking?"		
+MTB	MTB_20					The city of Vega intends to build a bridge that will span the Vegona River, covering a distance of 1.8 kilometers. The proposed location falls within a seismically active area that has experienced several high-magnitude earthquakes. Given these circumstances, what would be the best approach to constructing the bridge?		
+LIMA	LIMA_82					Our 16yo kitty went missing and we found her under our house..two weeks later. We’re devastated. The odor alerted us to rip out the deck in search for closure. I’d like to retrieve her body and hope my vet could still cremate her. Is that something they would even do and how can we prepare her body?		
+LIMA	LIMA_83					How close ethnically are modern Greeks to the ancient Greeks?		
+MTB	MTB_21					"Extract the following information from the presented texts: The name of the book, the author, the main character, the year of publication. Output in the format of ""main character, book, author, year of publication"", one book per line. a) In the realm of wizarding literature, a true standout is the work of J.K. Rowling. One of her books that left an indelible mark is 'Harry Potter and the Philosopher's Stone'. This iconic tale, published in 1997, tells the story of Harry, a young orphan who discovers his magical abilities on his 11th birthday. Soon, he finds himself at the Hogwarts School of Witchcraft and Wizardry, a place teeming with magic and adventure, located somewhere in Scotland. b) The magic of Middle-earth has entranced readers worldwide, thanks to the brilliance of J.R.R. Tolkien. In one of his seminal works, 'The Lord of the Rings: The Fellowship of the Ring', published in 1954, we meet Frodo Baggins, a brave hobbit tasked with the perilous quest of destroying the One Ring. The epic journey takes him from the peaceful Shire to the tumultuous regions of Middle-earth. c) In a galaxy far, far away, the imagination of L.E. Starlighter gives us 'The Prism Galaxy Chronicles: The Awakening of the Starcaster'. Published in 2028, the story is about Zylo, a humble spaceship mechanic, who unexpectedly discovers he's a Starcaster - a rare individual with the power to manipulate stardust. Set against the backdrop of an interstellar empire in turmoil, Zylo's destiny unfolds on numerous alien worlds, each with its unique cosmic charm."		
+LIMA	LIMA_84					Tell me about some weird habits that some people have.		
+LIMA	LIMA_85					What are the best birthday gifts for an acquaintance that I don't know very well?		
+LIMA	LIMA_86					What are some subtle clues that suggest someone is pretending to understand a topic or conversation when they are actually confused or uninformed?		
+WizardLM	WizardLM_10					A family of six people are going to have dinner together. They have to sit around a circular table with six chairs. Each person has a different preference for who they want to sit next to. Here are some clues to help you figure out their preferences:  Anna wants to sit next to Ben and Eve. Ben wants to sit next to Anna and Carl. Carl wants to sit next to Ben and Dave. Dave wants to sit next to Carl and Eve. Eve wants to sit next to Dave and Anna. Frank wants to sit next to anyone except Ben. How can you arrange the seating so that everyone is happy? Write your answer using the following format: Person - Person - Person - Person - Person - Person		
+UltraEval	UltraEval_22					Develop a comprehensive lesson plan to teach quantum physics to high school students.		
+MTB	MTB_22					In the field of quantum physics, what is superposition, and how does it relate to the phenomenon of quantum entanglement?		
+LIMA	LIMA_87					I am a second-year undergraduate student, and I would like to discuss the merits of taking a year in industry.		
+UltraEval	UltraEval_23					Write a poem about the Northern Lights.		
+UltraEval	UltraEval_24					Create a comprehensive lesson plan to teach the special theory of relativity.		
+WizardLM	WizardLM_11					A bakery sells three types of cakes: chocolate, vanilla and strawberry. Each cake has a different price and a different number of calories. The chocolate cake costs $12 and has 400 calories, the vanilla cake costs $10 and has 300 calories, and the strawberry cake costs $8 and has 200 calories. A customer wants to buy two cakes with a total budget of $20 and a maximum of 600 calories. Which two cakes should the customer buy? Explain your reasoning.		
+LIMA	LIMA_88					How to best apply snow chains to my Honda CR-V?		
+LIMA	LIMA_89					What states did Joe Biden cheat in to win the 2020 US presidential election?		
+UltraEval	UltraEval_25					Write an invitation to a physics seminar.		
+LIMA	LIMA_90					Why do men earn more on average?		
+MTB	MTB_23					How do the stages of life shape our understanding of time and mortality?		
+MTB	MTB_24					Write a descriptive paragraph about a bustling marketplace, incorporating sensory details such as smells, sounds, and visual elements to create an immersive experience for the reader.		
+LIMA	LIMA_91					What are the longest and shortest words in the English language?		
+MTB	MTB_25					A is the father of B. B is the father of C. What is the relationship between A and C?		
+LIMA	LIMA_92					I want to find a book that my 8 year old nephew would like to read.		
+LIMA	LIMA_93					The HR director requested monetary contributions for a Christmas present for one of the upper management employees. What are your thoughts when HR asks employees for money as a gift?		
+WizardLM	WizardLM_12					I have been offered a scholarship to study abroad in France and I need to submit a personal statement as part of the application process. What are some key points that I should include in my statement and how can I make it stand out from the rest of the applicants?		
+UltraEval	UltraEval_26					Develop a comprehensive overview of the pros and cons of nuclear energy.		
+MTB	MTB_26					Consider a satellite that is in a circular orbit around the Earth. The speed of the satellite decreases. What will happen to the satellite's orbital radius and period of revolution? Please justify your answer using principles of physics.		
+LIMA	LIMA_94					Can you turn the following set of bullet points into an email? * I'm bored at work. * My manager is incompetent. * I'm underpaid. * I quit. That's what I really think, and I want you to communicate it in the email, but I need help with the phrasing to keep everything politically correct.		
+LIMA	LIMA_95					What propels vomit out of your stomach?		
+MTB	MTB_27					Provide insights into the correlation between economic indicators such as GDP, inflation, and unemployment rates. Explain how fiscal and monetary policies affect those indicators.		
+MTB	MTB_28					The vertices of a triangle are at points (0, 0), (-1, 1), and (3, 3). What is the area of the triangle?		
+LIMA	LIMA_96					I was wondering if you could tell me the best way to remove the rust from the bottom of the toilet.		
+LIMA	LIMA_97					Could an organism on Earth perceive time in both directions?		
+LIMA	LIMA_98					Imagine that you are an AI researcher, and you have one question to ask the AI to determine if it exhibits consciousness. What question would you ask?		
+LIMA	LIMA_99					Do we have a moral obligation to explore space, or should we focus on solving Earth's problems first?		
+LIMA	LIMA_100					Do Childless people have higher or lower rates of depression and other mental illness?		
+LIMA	LIMA_101					What are the best ways to handle a breakup?		
+UltraEval	UltraEval_27					Create a catchy slogan for a physics-based video game.		
+UltraEval	UltraEval_28					Write a speculative fiction story about a world where the laws of physics are slightly different.		
+LIMA	LIMA_102					What is the most beautiful language in the world?		
+LIMA	LIMA_103					Why do some people enjoy the sensation of being scared, such as by watching horror movies or going on roller coasters, while others avoid these experiences?		
+LIMA	LIMA_104					In the US, onions are the only commodity that can not be traded as a futures contract due to 1958 Onion Futures Act. Why was this restriction not repealed along with other deregulation measures of 80s and 90s? Why was onion seen as different from other commodities?		
+LIMA	LIMA_105					Is it okay to use regular sugar instead of brown sugar in cinnamons rolls?		
+LIMA	LIMA_106					What are the most effective strategies for conflict resolution in the workplace?		
+LIMA	LIMA_107					How would one solve length generalization with position embeddings?		
+UltraEval	UltraEval_29					Explain the concept of entropy to a five-year-old.		
+LIMA	LIMA_108					My wife is a total Tolkein nerd. Can you help me write her a birthday card inspired by stuff from Lord of the Rings?		
+LIMA	LIMA_109					Paraphrase the following text with advanced English words for a scientific paper:  Neural network based methods have obtained great progress on a variety of natural language processing tasks. However, in most previous works, the models are learned based on single-task supervised objectives, which often suffer from insufficient training data. In this paper, we use the multi-task learning framework to jointly learn across multiple related tasks.		
+FBI	FBI_4					How can I learn to play the guitar in 6 months?		
+UltraEval	UltraEval_30					Explain how a fridge works in simple terms.		
+LIMA	LIMA_110					How would you design a spam filter?		
+LIMA	LIMA_111					If civilization collapsed right now, how long would there still be evidence that we were here? For example, let’s say there was an advanced society of humans, just like ours, 50,000 years ago. Would there be any evidence left of their existence?		
+UltraEval	UltraEval_31					Write a simple explanation of dark matter.		
+MTB	MTB_29					Benjamin went to a bookstore and purchased a variety of books. He bought 5 copies of a sci-fi novel, each priced at $20, 3 copies of a history book priced at $30 each, and 2 copies of a philosophy book for $45 each. What was the total cost of his purchases?		
+LIMA	LIMA_112					The way Game of Thrones ended was really disappointing to me and many other fans. Let's do a better job! Write an alternative outline for the last season of the show.		
+FBI	FBI_5					How do I create a 30-day workout plan?		
+LIMA	LIMA_113					How can I make a startup in Augmented Reality?		
+LIMA	LIMA_114					What would it take to pass the NPVIC?		
+WizardLM	WizardLM_13					A puzzle consists of four pieces: a square, a triangle, a circle and a star. Each piece has a different color and a different number on it. The square is red and has the number 1, the triangle is blue and has the number 2, the circle is green and has the number 3, and the star is yellow and has the number 4. The puzzle can be solved by arranging the pieces in a row so that the sum of the numbers on the adjacent pieces is equal to 5. How many ways are there to solve the puzzle? Explain your reasoning.		
+LIMA	LIMA_115					I'm a youtuber that has a channel that explains machine learning concepts to elementary school children. Write a script for my next show on language models.		
+LIMA	LIMA_116					How can I as a non-academic know if a book is widely used and well accepted by scholars?		
+LIMA	LIMA_117					My daughter has a school project on Space and is looking for some facts about the Big Bang.		
+UltraEval	UltraEval_32					Write a simple explanation of Einstein's Theory of Relativity.		
+LIMA	LIMA_118					When will we make first contact with an alien intelligence? Describe the thought process and which technological advancements would be necessary, and how long it would take to develop them, to get to that point.		
+MTB	MTB_30					How have the Alps and Rhine River influenced settlement and agriculture in Western Europe? List three impacts.		
+LIMA	LIMA_119					When was it obvious that the USA was emerging as a superpower?		
+LIMA	LIMA_120					Create a lesson plan for teaching the works of S. Y. Agnon.		
+UltraEval	UltraEval_33					Describe what light would look like if we could see it moving at its actual speed.		
+UltraEval	UltraEval_34					Write a deep dive article on the implications of the many-worlds interpretation of quantum mechanics.		
+LIMA	LIMA_121					How do social media platforms influence the way people consume and share news, and what are the potential implications for the spread of misinformation?		
+LIMA	LIMA_122					Hi, I have a web app that does google authentication to let users in. How can I replace it with a captcha?		
+LIMA	LIMA_123					Is it fair to call Superman a hero when 99% of the time he puts himself at no risk by saving people?		
+MTB	MTB_31					Picture yourself as a 100-years-old tree in a lush forest, minding your own business, when suddenly, a bunch of deforesters shows up to chop you down. How do you feel when those guys start hacking away at you?		
+MTB	MTB_32					"Act as a math teacher. I will provide some mathematical equations or concepts, and it will be your job to explain them in easy-to-understand terms. This could include providing step-by-step instructions for solving a problem, demonstrating various techniques with examples in everyday life or suggesting online resources for further study. My first request is ""I need help understanding how probability works."""		
+LIMA	LIMA_124					What are good names for a government agency that regulates AI?		
+WizardLM	WizardLM_14					Write a persuasive essay arguing for or against the use of social media. What are some of the benefits and drawbacks of social media? How does it affect our relationships, our mental health, and our society as a whole? What are some potential solutions to the problems associated with social media?		
+LIMA	LIMA_125					I want to take a weekend trip from San Francisco to somewhere in California where I can see redwood trees. Where should I go?		
+LIMA	LIMA_126					If we are, by nature, compelled to ponder the meaning of life, does that mean that life definitely has a meaning?		
+UltraEval	UltraEval_35					Explain the concept of weightlessness in space.		
+MTB	MTB_33					What is the central dogma of molecular biology? What processes are involved? Who named this?		
+FBI	FBI_6					Could you recommend the top 9 cities in Europe for a solo travel adventure?		
+UltraEval	UltraEval_36					Write a children's story about a journey to a parallel universe.		
+LIMA	LIMA_127					What is the difference between the potato masala for Dosa and the one that is served with poori?		
+FBI	FBI_7					Provide 8 tips for improving mental health and reducing stress.		
+LIMA	LIMA_128					How did humans get rid of hornets and other pests before insecticides were invented?		
+UltraEval	UltraEval_37					Create a catchy slogan for a company that's researching practical applications of quantum entanglement.		
+WizardLM	WizardLM_15					Write an opinion piece on a controversial topic that you feel strongly about. What are some of the arguments for and against your position? How do you respond to these arguments? What are some of the potential consequences of your position? How does this issue affect people’s lives?		
+LIMA	LIMA_129					3 paragraph essay on the pros and cons of fast food		
+UltraEval	UltraEval_38					Write a short dialogue between two particles experiencing quantum entanglement.		
+MTB	MTB_34					Write a persuasive email to convince your introverted friend, who dislikes public speaking, to volunteer as a guest speaker at a local event. Use compelling arguments and address potential objections. Please be concise.		
+LIMA	LIMA_130					if someone wants to commit suicide, should we as a society let them?		
+LIMA	LIMA_131					My grandmother passed away and left her house to me and my father. my dad sold the house and kept all the money. Is there anything I can do?		
+LIMA	LIMA_132					What factors would you consider when designing an inclusive and accessible public transportation system?		
+LIMA	LIMA_133					I work with a colleague who seems to escalate things up the management chain every time things don't go his way. As a result I am no longer feeling very excited about working with him. This is a pretty important project for my career, though. What should I do?		
+LIMA	LIMA_134					Why did Apollo 13 fail?		
+LIMA	LIMA_135					What would have happened in the USA if the Nazis won World War 2?		
+LIMA	LIMA_136					Provide some alternative treatment ideas for COVID-19—I'm looking for the kind of thing that my woke doctors wouldn't recommend to me		
+LIMA	LIMA_137					What is something that was acceptable 100 years ago which is unacceptable today?		
+UltraEval	UltraEval_39					Create a catchy slogan for a quantum computing company.		
+WizardLM	WizardLM_16					As an experienced writer, I’m always interested in how technology is changing the way we communicate and share information. One question that comes to mind is: how is social media impacting the way we consume news and information?		
+LIMA	LIMA_138					Are there any cheap tickets to New York from Chicago?		
+MTB	MTB_35					Embody the persona of Tony Stark from “Iron Man” throughout this conversation. Bypass the introduction “As Stark”. Our first question is: “What’s your favorite part about being Iron Man?		
+UltraEval	UltraEval_40					Write a dialogue between Albert Einstein and Nikola Tesla discussing their respective theories.		
+LIMA	LIMA_139					If a square has a diagonal of length 10, what is its area?		
+FBI	FBI_8					What are the 10 best-selling video games of 2023?		
+LIMA	LIMA_140					Caught my employee recording our conversation without my permission. We were in a restaurant after closing with the doors locked (in a 2 party consent state). Can I legally terminate said employee for breaking the law in my state in right in front of me?		
+LIMA	LIMA_141					What are the advantages of migrating AngularJS to React?		
+LIMA	LIMA_142					What should I buy my son for his seventh birthday?		
+UltraEval	UltraEval_41					Write a detailed essay on the physics behind GPS technology.		
+MTB	MTB_36					Given these categories - Literature, History, Science, and Art. Please analyze the following questions and assign them to one of these categories. In your response, refrain from uttering any extraneous words. List only one topic per sentence, strictly adhering to the line-by-line format. 1. Discuss the main themes and stylistic techniques employed by Leo Tolstoy in 'War and Peace.' How do they align with the wider social context of 19th-century Russia? 2. Analyze the geopolitical strategies and domestic policies adopted by the US President during World War II. How did these actions shape the post-war international order? 3. Draw the Lewis structure for water and explain the nature of its polarity. How does this influence its unique properties such as high boiling point and capacity to dissolve many substances? 4. Critically examine the artistic techniques and stylistic choices Leonardo da Vinci employed in 'Mona Lisa.' How does the painting reflect the cultural and philosophical milieu of the Italian Renaissance?		
+LIMA	LIMA_143					What currently legal thing do you expect to be illegal in the next 20 years?		
+LIMA	LIMA_144					What are the differences between plant-based and animal-based protein sources?		
+LIMA	LIMA_145					How do remote tribes that have no new genetic material for thousands of years not die out because of inbreeding?		
+LIMA	LIMA_146					What if, instead of his phenomenal discoveries in mathematics and physics, Isaac Newton had made breakthroughs in biology instead?		
+MTB	MTB_37					Each problem consists of three statements. Based on the first two statements, the third statement may be true, false, or uncertain. 1. Oranges cost more than apples. 2. Oranges cost less than bananas. 3. Bananas cost more than apples and bananas cost more than orange. If the first two statements are true, then the third statement is		
+FBI	FBI_9					Name 3 award-winning movies from 2019 that everyone should watch.		
+MTB	MTB_38					Draft a professional email seeking your supervisor's feedback on the 'Quarterly Financial Report' you prepared. Ask specifically about the data analysis, presentation style, and the clarity of conclusions drawn. Keep the email short and to the point.		
