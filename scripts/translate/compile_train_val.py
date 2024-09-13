@@ -1,47 +1,9 @@
 import json
 import pandas as pd
-from tqdm import tqdm 
 import argparse
-
-def parse_args():
-    parser = argparse.ArgumentParser(description='Batch processing')
-    # data
-    parser.add_argument('--split', help="train or test")
-    parser.add_argument('--lang', help="language to translate to")
-    args = parser.parse_args()
-    return args
-
-args = parse_args()
-if args.split == 'train':
-    _SPLIT = "Feedback-Collection"
-elif args.split == 'test':
-    _SPLIT = "Feedback-Bench"
-
-
-original_testset_path = f"artifacts/{_SPLIT}/new_feedback_collection.json"
-translated_instructions_path = f"/Users/sumanth/code/CIA/artifacts/batch/outputs/{_SPLIT}-instructions-en2{args.lang}-gpt-4o.jsonl"
-translated_responses_path = f"/Users/sumanth/code/CIA/artifacts/batch/outputs/{_SPLIT}-responses-en2{args.lang}-gpt-4o.jsonl"
-
-unq_instructions_path = f"artifacts/{_SPLIT}/unique_instructions.tsv"
-unq_responses_path = f"artifacts/{_SPLIT}/unique_responses.tsv"
-
-with open(translated_instructions_path) as f:
-    translated_instructions = [json.loads(line) for line in f]
-translated_instructions_df = pd.DataFrame(translated_instructions)
-
-with open(translated_responses_path) as f:
-    translated_responses = [json.loads(line) for line in f]
-translated_responses_df = pd.DataFrame(translated_responses)
-
-unq_instructions_df = pd.read_csv(unq_instructions_path, sep="\t")
-unq_responses_df = pd.read_csv(unq_responses_path, sep="\t")
-
-if args.split == 'train':
-    with open(original_testset_path) as f:
-        data = json.load(f)
-elif args.split == 'test':
-    with open(original_testset_path) as f:
-        data = [json.loads(line) for line in f]
+import glob
+from tqdm import tqdm 
+from joblib import Parallel, delayed
 
 
 def get_messages(instruction, response, reference_answer, rubric):
@@ -69,18 +31,27 @@ def get_messages(instruction, response, reference_answer, rubric):
     ###Feedback: """
     return ABS_SYSTEM_PROMPT + "\n\n" + ABSOLUTE_PROMPT
 
+def load_translated_data(translated_path):
+    files = sorted(glob.glob(translated_path))
+    translated_data = []
+    for file in files:
+        with open(file) as f:
+            for line in f:
+                translated_data.append(json.loads(line))
+    return pd.DataFrame(translated_data)
 
-
-translated_feedback_collection = []
-for d in tqdm(data):
+def process_entry(d, unq_instructions_df, unq_responses_df, translated_instructions_df, translated_responses_df):
     t_dict = {}
     try:
+        # Find response index
         resp_idx = unq_responses_df[unq_responses_df['response'] == d['orig_response']]['idx'].values[0]
         t_dict['orig_response'] = translated_responses_df[translated_responses_df['custom_id'] == resp_idx]['response'].values[0]['body']['choices'][0]['message']['content']
 
+        # Find instruction index
         inst_idx = unq_instructions_df[unq_instructions_df['instruction'] == d['orig_instruction']]['idx'].values[0]
         t_dict['orig_instruction'] = translated_instructions_df[translated_instructions_df['custom_id'] == inst_idx]['response'].values[0]['body']['choices'][0]['message']['content']
 
+        # Collect additional fields
         t_dict['orig_criteria'] = d['orig_criteria']
         t_dict['orig_score1_description'] = d['orig_score1_description']
         t_dict['orig_score2_description'] = d['orig_score2_description']
@@ -93,6 +64,7 @@ for d in tqdm(data):
         t_dict['input'] = d['input']
         t_dict['output'] = d['output']
 
+        # Create rubric string
         _RUBRIC = (
             f"{t_dict['orig_criteria']}\n"
             f"Score 1: {t_dict['orig_score1_description']}\n"
@@ -101,19 +73,82 @@ for d in tqdm(data):
             f"Score 4: {t_dict['orig_score4_description']}\n"
             f"Score 5: {t_dict['orig_score5_description']}\n"
         )
+        
+        # Prepare messages
         t_dict['messages'] = [
             {"role": "user", "content": get_messages(t_dict['orig_instruction'], t_dict['orig_response'], t_dict['orig_reference_answer'], _RUBRIC)},
-            {"role": "assistant", "content": t_dict['output'], }
+            {"role": "assistant", "content": t_dict['output']}
         ]
-
-        translated_feedback_collection.append(t_dict)
+        
+        return t_dict
     except Exception as e:
-        print(f"Error in {e}")
+        print(f"Error: {e}")
+        return None
+
+def process_data(data, unq_instructions_df, unq_responses_df, translated_instructions_df, translated_responses_df):
+    translated_feedback_collection = Parallel(n_jobs=1)(
+        delayed(process_entry)(d, unq_instructions_df, unq_responses_df, translated_instructions_df, translated_responses_df)
+        for d in tqdm(data)
+    )
+    print("Number of entries:", len(translated_feedback_collection))
+    translated_feedback_collection = [t_dict for t_dict in translated_feedback_collection if t_dict is not None]
+    print("Number of entries after filtering:", len(translated_feedback_collection))
+    
+    return translated_feedback_collection
+
+def parse_args():
+    parser = argparse.ArgumentParser(description='Batch processing')
+    # data
+    parser.add_argument('--split', help="train or test")
+    parser.add_argument('--lang', help="language to translate to")
+    args = parser.parse_args()
+    return args
 
 
-if args.split == "train":
-    with open(f"artifacts/{_SPLIT}/{args.lang}_translated_feedback_collection.json", "w") as f:
-        json.dump(translated_feedback_collection, f, indent=4, ensure_ascii=False)
-elif args.split == "test":
-     with open(f"artifacts/{_SPLIT}/{args.lang}_translated_feedback_bench.json", "w") as f:
-        json.dump(translated_feedback_collection, f, indent=4, ensure_ascii=False)
+def main():
+    args = parse_args()
+    if args.split == 'train':
+        _SPLIT = "Feedback-Collection"
+    elif args.split == 'test':
+        _SPLIT = "Feedback-Bench"
+        
+    original_testset_path = f"artifacts/{_SPLIT}/new_feedback_collection.json"
+    translated_instructions_path = f"artifacts/batch/outputs/{args.lang}/{_SPLIT}-instructions-en2{args.lang}-gpt-4o-2024-08-06*.jsonl"
+    translated_responses_path = f"artifacts/batch/outputs/{args.lang}/{_SPLIT}-responses-en2{args.lang}-gpt-4o-2024-08-06*.jsonl"
+
+    unq_instructions_path = f"artifacts/{_SPLIT}/unique_instructions.tsv"
+    unq_responses_path = f"artifacts/{_SPLIT}/unique_responses.tsv"
+    
+    print("Loading data...")
+    
+    translated_instructions_df = load_translated_data(translated_instructions_path)
+    translated_responses_df = load_translated_data(translated_responses_path)
+    
+    unq_instructions_df = pd.read_csv(unq_instructions_path, sep="\t")
+    unq_responses_df = pd.read_csv(unq_responses_path, sep="\t")
+    
+    if args.split == 'train':
+        with open(original_testset_path) as f:
+            data = json.load(f)
+    elif args.split == 'test':
+        with open(original_testset_path) as f:
+            data = [json.loads(line) for line in f]
+
+    translated_feedback_collection = process_data(
+        data,
+        unq_instructions_df,
+        unq_responses_df,
+        translated_instructions_df,
+        translated_responses_df
+        )
+    
+    if args.split == "train":
+        with open(f"artifacts/final_upload/xx-prometheus/data/{args.lang}_translated_feedback_collection.json", "w") as f:
+            json.dump(translated_feedback_collection, f, indent=4, ensure_ascii=False)
+            
+    elif args.split == "test":
+        with open(f"artifacts/final_upload/xx-prometheus/data/{args.lang}_translated_feedback_bench.json", "w") as f:
+            json.dump(translated_feedback_collection, f, indent=4, ensure_ascii=False)
+            
+if __name__ == '__main__':
+    main()
