@@ -170,3 +170,4 @@ cython_debug/
 
 artifacts/models/*
 artifacts/results/*
+scripts/train/wandb/*
