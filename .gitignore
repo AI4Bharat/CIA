@@ -1,5 +1,7 @@
 # custom added
 config.py
+scripts/config.py
+artifacts/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

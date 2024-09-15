@@ -2,7 +2,7 @@ import os
 import json
 import argparse
 from openai import OpenAI
-import config
+import config as config
 
 
 API_KEY = config.OPENAI_API_KEY
@@ -18,7 +18,7 @@ def parse_args():
     parser.add_argument('--input_file_name', type=str, help='File name of batch job')
     parser.add_argument('--output_file_name', type=str, help='File name of batch job')
     parser.add_argument('--job_desc', type=str, help='Description of batch job')
-    parser.add_argument('--data_path', type=str, default='/home/safi/cia/data', help='Path to data directory')
+    parser.add_argument('--data_path', type=str, default='artifacts/batch/inputs', help='Path to data directory')
     args = parser.parse_args()
     return args
 

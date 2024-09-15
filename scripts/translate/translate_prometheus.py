@@ -11,7 +11,8 @@ _LANG_MAP = {
     'te': 'Telugu',
     'de': 'German',
     'fr': 'French',
-    'ja': 'Japanese'
+    'ja': 'Japanese',
+    'ur': 'Urdu'
 }
 
 
@@ -41,19 +42,38 @@ def create_jsonl(cdx: str, model_name: str, prompt: str, max_tokens: int, temper
     }
 
 
+# def dump_jsonl(args: argparse.Namespace, jsons: list, file_name: str) -> None:
+#     if args.debug:
+#         jsons = random.sample(jsons, 20)
+    
+#     with open(file_name, 'w') as f:
+#         for json_ in jsons:
+#             f.write(json.dumps(json_) + '\n')
+
 def dump_jsonl(args: argparse.Namespace, jsons: list, file_name: str) -> None:
+    max_entries = 50000
+    
+    # If debug mode is on, sample only 20 jsons
     if args.debug:
         jsons = random.sample(jsons, 20)
     
-    with open(file_name, 'w') as f:
-        for json_ in jsons:
-            f.write(json.dumps(json_) + '\n')
+    # Split jsons into chunks of size max_entries
+    chunks = [jsons[i:i + max_entries] for i in range(0, len(jsons), max_entries)]
+    
+    # Write each chunk to a separate file
+    for idx, chunk in enumerate(chunks):
+        # Create a new file name for each chunk
+        chunk_file_name = f"{os.path.splitext(file_name)[0]}_{idx + 1}.jsonl"
+        
+        with open(chunk_file_name, 'w') as f:
+            for json_ in chunk:
+                f.write(json.dumps(json_) + '\n')
 
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Batch processing')
     # model arguments
-    parser.add_argument('--model', type=str, default='gpt-4o', help='Model to use')
+    parser.add_argument('--model', type=str, default='gpt-4o-2024-08-06', help='Model to use')
     parser.add_argument('--temperature', type=float, default=0.7, help='Temperature for sampling')
     parser.add_argument('--top_p', type=float, default=1, help='Top p for sampling')
     parser.add_argument('--max_tokens', type=int, default=2048, help='Max tokens for sampling')
@@ -76,7 +96,7 @@ def main(args):
         lang = args.lang
         if args.split == 'train':
             _SPLIT = "Feedback-Collection"
-            with open(f"artifacts/{_SPLIT}/new_feedback_collection.json") as f:
+            with open(f"artifacts/{_SPLIT}/new_feedback_collection.json") as f: 
                 data = json.load(f)
         elif args.split == 'test':
             _SPLIT = "Feedback-Bench"
@@ -103,10 +123,12 @@ def main(args):
             unq_inst_ids.append(f"inst-{i}")
             unq_instructions.append(inst)
             instruction_jsons.append(dict_)
+            
+        print("Number of unique instructions:", len(unq_instructions))
         
         unq_instructions_df = pd.DataFrame({'idx': unq_inst_ids, 'instruction': unq_instructions})
         unq_instructions_df.to_csv(f"artifacts/{_SPLIT}/unique_instructions.tsv", sep="\t", index=False)
-        dump_jsonl(args, instruction_jsons, f"artifacts/batch/inputs/{_SPLIT}-instructions-en2{lang}-{args.model}.jsonl")
+        dump_jsonl(args, instruction_jsons, f"artifacts/batch/inputs/{lang}/{_SPLIT}-instructions-en2{lang}-{args.model}.jsonl")
 
         # translate responses
         response_jsons = []
@@ -124,9 +146,11 @@ def main(args):
             response_jsons.append(dict_)
             unq_responses.append(resp)
 
+        print("Number of unique responses:", len(unq_responses))
+        
         unq_responses_df = pd.DataFrame({'idx': unq_resp_ids, 'response': unq_responses})
         unq_responses_df.to_csv(f"artifacts/{_SPLIT}/unique_responses.tsv", sep="\t", index=False)
-        dump_jsonl(args, response_jsons, f"artifacts/batch/inputs/{_SPLIT}-responses-en2{lang}-{args.model}.jsonl")
+        dump_jsonl(args, response_jsons, f"artifacts/batch/inputs/{lang}/{_SPLIT}-responses-en2{lang}-{args.model}.jsonl")
 
 if __name__ == '__main__':
     args = parse_args()
