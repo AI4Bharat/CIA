@@ -1,0 +1,45 @@
+# Model arguments
+model_name_or_path: google/gemma-1.1-7b-it
+model_revision: main
+torch_dtype: bfloat16
+attn_implementation: flash_attention_2
+
+# Data training arguments
+chat_template: "{{ bos_token }}{% if messages[0]['role'] == 'system' %}{{ raise_exception('System role not supported') }}{% endif %}{% for message in messages %}{% if (message['role'] == 'user') != (loop.index0 % 2 == 0) %}{{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}{% endif %}{% if (message['role'] == 'assistant') %}{% set role = 'model' %}{% else %}{% set role = message['role'] %}{% endif %}{{ '<start_of_turn>' + role + '\n' + message['content'] | trim + '<end_of_turn>\n' }}{% endfor %}{% if add_generation_prompt %}{{'<start_of_turn>model\n'}}{% endif %}"
+dataset_mixer:
+  ai4bharat/xx-prometheus: 1.0
+dataset_splits:
+- train
+- test
+dataset_configs:
+- bn
+preprocessing_num_workers: 64
+
+# SFT trainer config
+bf16: true
+do_eval: true
+evaluation_strategy: epoch
+gradient_accumulation_steps: 2
+gradient_checkpointing: true
+gradient_checkpointing_kwargs:
+  use_reentrant: False
+learning_rate: 1.0e-05
+log_level: info
+logging_steps: 5  
+logging_strategy: steps
+lr_scheduler_type: cosine
+max_seq_length: 4096
+max_steps: -1
+num_train_epochs: 3
+output_dir: /projects/data/llmteam/CIA/artifacts/models/bn-gemma-7b-it-v0.5
+overwrite_output_dir: true
+per_device_eval_batch_size: 1
+per_device_train_batch_size: 4
+remove_unused_columns: true
+report_to:
+- wandb
+save_strategy: "epoch"
+save_steps: 1000
+save_total_limit: 1
+seed: 42
+warmup_ratio: 0.1
