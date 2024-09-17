@@ -11,6 +11,7 @@ from transformers import AutoTokenizer
 
 BASE_MODEL_PATH = "/projects/data/llmteam/CIA/artifacts/models"
 OUTPUT_PATH = "/projects/data/llmteam/CIA/artifacts/results"
+os.makedirs(OUTPUT_PATH, exist_ok=True)
 
 
 def main(num_gpus, model_name, lang):
@@ -65,7 +66,6 @@ if __name__ == "__main__":
     available_gpus = torch.cuda.device_count()
     
     predictions = main(available_gpus, args.model_name, args.lang)
-    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     
     predictions.to_csv(f"{OUTPUT_PATH}/{args.model_name}.tsv", sep='\t', index=False)
     print(f"Saved predictions to {OUTPUT_PATH}/{args.model_name}.tsv!!")
