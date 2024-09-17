@@ -5,6 +5,16 @@ import glob
 from tqdm import tqdm 
 from joblib import Parallel, delayed
 
+_LANG_MAP = {
+    'bn': 'Bengali',
+    'hi': 'Hindi',
+    'te': 'Telugu',
+    'de': 'German',
+    'fr': 'French',
+    'ja': 'Japanese',
+    'ur': 'Urdu'
+}
+
 
 def get_messages(instruction, response, reference_answer, rubric):
     ABS_SYSTEM_PROMPT = "You are a fair judge assistant tasked with providing clear, objective feedback based on specific criteria, ensuring each assessment reflects the absolute standards set for performance."
@@ -39,6 +49,15 @@ def load_translated_data(translated_path):
             for line in f:
                 translated_data.append(json.loads(line))
     return pd.DataFrame(translated_data)
+
+def load_original_data(original_path):
+    files = sorted(glob.glob(original_path))
+    original_data = []
+    for file in files:
+        with open(file) as f:
+            for line in f:
+                original_data.append(json.loads(line))
+    return original_data
 
 def process_entry(d, unq_instructions_df, unq_responses_df, translated_instructions_df, translated_responses_df):
     t_dict = {}
@@ -86,15 +105,44 @@ def process_entry(d, unq_instructions_df, unq_responses_df, translated_instructi
         return None
 
 def process_data(data, unq_instructions_df, unq_responses_df, translated_instructions_df, translated_responses_df):
-    translated_feedback_collection = Parallel(n_jobs=1)(
-        delayed(process_entry)(d, unq_instructions_df, unq_responses_df, translated_instructions_df, translated_responses_df)
-        for d in tqdm(data)
-    )
+    # translated_feedback_collection = Parallel(n_jobs=1)(
+    #     delayed(process_entry)(d, unq_instructions_df, unq_responses_df, translated_instructions_df, translated_responses_df)
+    #     for d in tqdm(data)
+    # )
+    translated_feedback_collection = []
+    for d in tqdm(data):
+        translated_feedback_collection.append(process_entry(d, unq_instructions_df, unq_responses_df, translated_instructions_df, translated_responses_df))
     print("Number of entries:", len(translated_feedback_collection))
     translated_feedback_collection = [t_dict for t_dict in translated_feedback_collection if t_dict is not None]
     print("Number of entries after filtering:", len(translated_feedback_collection))
     
     return translated_feedback_collection
+
+def fix_unique_instructions(df, orig_data, lang):
+    prompt_prefix = f"Translate the following Input Prompt from English to {_LANG_MAP[lang]}.\nDo not write any additional content, just translate the prompt.\nInput Prompt:\n"
+    promtp_suffix = f"\n\n{_LANG_MAP[lang]} Translation:\n"
+    
+    for data in tqdm(orig_data):
+        actual_id = data['custom_id']
+        sentence = data['body']['messages'][1]['content']
+        actual_sentence = sentence.split(prompt_prefix)[1].split(promtp_suffix)[0]
+        #update the row in the dataframe with actual_id in the row that matches the actual_sentence
+        df.loc[df['instruction'] == actual_sentence, 'idx'] = actual_id
+        
+    return df
+
+def fix_unique_responses(df, orig_data, lang):
+    prompt_prefix = f"Translate the following Input Prompt from English to {_LANG_MAP[lang]}.\nDo not write any additional content, just translate the prompt.\nInput Prompt:\n"
+    promtp_suffix = f"\n\n{_LANG_MAP[lang]} Translation:\n"
+    
+    for data in tqdm(orig_data):
+        actual_id = data['custom_id']
+        sentence = data['body']['messages'][1]['content']
+        actual_sentence = sentence.split(prompt_prefix)[1].split(promtp_suffix)[0]
+        #update the row in the dataframe with actual_id in the row that matches the actual_sentence
+        df.loc[df['response'] == actual_sentence, 'idx'] = actual_id
+        
+    return df
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Batch processing')
@@ -115,6 +163,9 @@ def main():
     original_testset_path = f"artifacts/{_SPLIT}/new_feedback_collection.json"
     translated_instructions_path = f"artifacts/batch/outputs/{args.lang}/{_SPLIT}-instructions-en2{args.lang}-gpt-4o-2024-08-06*.jsonl"
     translated_responses_path = f"artifacts/batch/outputs/{args.lang}/{_SPLIT}-responses-en2{args.lang}-gpt-4o-2024-08-06*.jsonl"
+    
+    input_instructions_path = f"artifacts/batch/inputs/{args.lang}/{_SPLIT}-instructions-en2{args.lang}-gpt-4o-2024-08-06*.jsonl"
+    input_responses_path = f"artifacts/batch/inputs/{args.lang}/{_SPLIT}-responses-en2{args.lang}-gpt-4o-2024-08-06*.jsonl"
 
     unq_instructions_path = f"artifacts/{_SPLIT}/unique_instructions.tsv"
     unq_responses_path = f"artifacts/{_SPLIT}/unique_responses.tsv"
@@ -126,6 +177,16 @@ def main():
     
     unq_instructions_df = pd.read_csv(unq_instructions_path, sep="\t")
     unq_responses_df = pd.read_csv(unq_responses_path, sep="\t")
+    
+    print("Fixing unique instructions...")
+    print(unq_instructions_df.columns)
+    unique_instructions = load_original_data(input_instructions_path)
+    unq_instructions_df = fix_unique_instructions(unq_instructions_df, unique_instructions, args.lang)
+    
+    print("Fixing unique responses...")
+    unique_responses = load_original_data(input_responses_path)
+    unq_responses_df = fix_unique_responses(unq_responses_df, unique_responses, args.lang)
+    
     
     if args.split == 'train':
         with open(original_testset_path) as f:
@@ -142,12 +203,20 @@ def main():
         translated_responses_df
         )
     
+    # if args.split == "train":
+    #     with open(f"artifacts/final_upload/xx-prometheus/data/{args.lang}_translated_feedback_collection_new.json", "w") as f:
+    #         json.dump(translated_feedback_collection, f, indent=4, ensure_ascii=False)
+            
+    # elif args.split == "test":
+    #     with open(f"artifacts/final_upload/xx-prometheus/data/{args.lang}_translated_feedback_bench_new_new.json", "w") as f:
+    #         json.dump(translated_feedback_collection, f, indent=4, ensure_ascii=False)
+            
     if args.split == "train":
-        with open(f"artifacts/final_upload/xx-prometheus/data/{args.lang}_translated_feedback_collection.json", "w") as f:
+        with open(f"artifacts/fixed_upload/{args.lang}_translated_feedback_collection.json", "w") as f:
             json.dump(translated_feedback_collection, f, indent=4, ensure_ascii=False)
             
     elif args.split == "test":
-        with open(f"artifacts/final_upload/xx-prometheus/data/{args.lang}_translated_feedback_bench.json", "w") as f:
+        with open(f"artifacts/fixed_upload/{args.lang}_translated_feedback_bench.json", "w") as f:
             json.dump(translated_feedback_collection, f, indent=4, ensure_ascii=False)
             
 if __name__ == '__main__':
