@@ -1,0 +1,2 @@
+fschat[model_worker,webui]
+aiolimiter==1.1.0
