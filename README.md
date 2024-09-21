@@ -43,7 +43,12 @@ We require separate environments for training and evaluation due to incompatible
    huggingface-cli login
    ```
 
-7. **Install Git LFS to push models to the Hugging Face Hub:**
+7. **Install other useful libraries:**
+   ```bash
+   pip install wandb huggingface-hub==0.24.7
+   ```
+
+8. **Install Git LFS to push models to the Hugging Face Hub:**
    ```bash
    sudo apt-get install git-lfs
    ```
