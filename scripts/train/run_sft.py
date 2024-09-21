@@ -280,6 +280,8 @@ def main():
         response_template_context = "<start_of_turn>model\n"
     elif "llama" in model_args.model_name_or_path:
         response_template_context = "<|start_header_id|>assistant<|end_header_id|>\n\n"
+    elif "sarvam" in model_args.model_name_or_path:
+        response_template_context = "[/INST]"
 
     response_template_ids = tokenizer.encode(
         response_template_context, add_special_tokens=False
