@@ -12,7 +12,7 @@ dataset_splits:
 - train
 - test
 dataset_configs:
-- ur
+- te
 preprocessing_num_workers: 64
 
 # SFT trainer config
@@ -42,4 +42,4 @@ save_steps: 1000
 save_total_limit: 3
 seed: 42
 warmup_ratio: 0.1
-output_dir: /projects/data/llmteam/CIA/artifacts/models/ur-sarvam-2b-v0.5
+output_dir: /projects/data/llmteam/CIA/artifacts/models/te-sarvam-2b-v0.5
