@@ -1,0 +1,21 @@
+models:
+  - model: /projects/data/llmteam/CIA/artifacts/models/bn-llama-8b-it-v0.5
+    parameters:
+      weight: 1.0
+  - model: /projects/data/llmteam/CIA/artifacts/models/de-llama-8b-it-v0.5
+    parameters:
+      weight: 1.0
+  - model: /projects/data/llmteam/CIA/artifacts/models/fr-llama-8b-it-v0.5
+    parameters:
+      weight: 1.0
+  - model: /projects/data/llmteam/CIA/artifacts/models/hi-llama-8b-it-v0.5
+    parameters:
+      weight: 1.0
+  - model: /projects/data/llmteam/CIA/artifacts/models/te-llama-8b-it-v0.5
+    parameters:
+      weight: 1.0
+  - model: /projects/data/llmteam/CIA/artifacts/models/ur-llama-8b-it-v0.5
+    parameters:
+      weight: 1.0
+merge_method: linear
+dtype: float16

@@ -1,0 +1,32 @@
+models:
+  - model: meta-llama/Meta-Llama-3.1-8B
+    # no parameters necessary for base model
+  - model: /projects/data/llmteam/CIA/artifacts/models/bn-llama-8b-it-v0.5
+    parameters:
+      density: 0.5
+      weight: 0.15
+  - model: /projects/data/llmteam/CIA/artifacts/models/de-llama-8b-it-v0.5
+    parameters:
+      density: 0.5
+      weight: 0.15
+  - model: /projects/data/llmteam/CIA/artifacts/models/fr-llama-8b-it-v0.5
+    parameters:
+      density: 0.5
+      weight: 0.15
+  - model: /projects/data/llmteam/CIA/artifacts/models/hi-llama-8b-it-v0.5
+    parameters:
+      density: 0.5
+      weight: 0.15
+  - model: /projects/data/llmteam/CIA/artifacts/models/te-llama-8b-it-v0.5
+    parameters:
+      density: 0.5
+      weight: 0.15
+  - model: /projects/data/llmteam/CIA/artifacts/models/ur-llama-8b-it-v0.5
+    parameters:
+      density: 0.5
+      weight: 0.15
+merge_method: ties
+base_model: meta-llama/Meta-Llama-3.1-8B
+parameters:
+  normalize: true
+dtype: float16
