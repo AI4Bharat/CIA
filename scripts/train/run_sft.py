@@ -218,6 +218,11 @@ def main():
         extra_id = tokenizer.convert_tokens_to_ids(extra)
         tokenizer.pad_token = extra
         tokenizer.pad_token_id = extra_id
+    if "aya" in model_args.model_name_or_path:
+        pad = "<PAD>"
+        pad_id = tokenizer.convert_tokens_to_ids(pad)
+        tokenizer.pad_token = pad
+        tokenizer.pad_token_id = pad_id
     else:
         tokenizer.padding_side = "right"
         tokenizer.pad_token = tokenizer.unk_token
@@ -282,6 +287,8 @@ def main():
         response_template_context = "<|start_header_id|>assistant<|end_header_id|>\n\n"
     elif "sarvam" in model_args.model_name_or_path:
         response_template_context = "[/INST]"
+    elif "aya" in model_args.model_name_or_path:
+        response_template_context = "<|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>"
 
     response_template_ids = tokenizer.encode(
         response_template_context, add_special_tokens=False

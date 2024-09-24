@@ -1,0 +1,45 @@
+# Model arguments
+model_name_or_path: CohereForAI/aya-23-8B
+model_revision: main
+torch_dtype: bfloat16
+attn_implementation: flash_attention_2
+
+# Data training arguments
+chat_template: "{{ bos_token }}{% if messages[0]['role'] == 'system' %}{% set loop_messages = messages[1:] %}{% set system_message = messages[0]['content'] %}{% elif false == true %}{% set loop_messages = messages %}{% set system_message = 'You are Command-R, a brilliant, sophisticated, AI-assistant trained to assist human users by providing thorough responses. You are trained by Cohere.' %}{% else %}{% set loop_messages = messages %}{% set system_message = false %}{% endif %}{% if system_message != false %}{{ '<|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|>' + system_message + '<|END_OF_TURN_TOKEN|>' }}{% endif %}{% for message in loop_messages %}{% if (message['role'] == 'user') != (loop.index0 % 2 == 0) %}{{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}{% endif %}{% set content = message['content'] %}{% if message['role'] == 'user' %}{{ '<|START_OF_TURN_TOKEN|><|USER_TOKEN|>' + content.strip() + '<|END_OF_TURN_TOKEN|>' }}{% elif message['role'] == 'assistant' %}{{ '<|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>'  + content.strip() + '<|END_OF_TURN_TOKEN|>' }}{% endif %}{% endfor %}{% if add_generation_prompt %}{{ '<|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>' }}{% endif %}"
+dataset_mixer:
+  ai4bharat/xx-prometheus: 1.0
+dataset_splits:
+- train
+- test
+dataset_configs:
+- hi
+preprocessing_num_workers: 64
+
+# SFT trainer config
+bf16: true
+do_eval: true
+evaluation_strategy: epoch
+gradient_accumulation_steps: 4
+gradient_checkpointing: true
+gradient_checkpointing_kwargs:
+  use_reentrant: False
+learning_rate: 1.0e-05
+log_level: info
+logging_steps: 5  
+logging_strategy: steps
+lr_scheduler_type: cosine
+max_seq_length: 4096
+max_steps: -1
+num_train_epochs: 3
+overwrite_output_dir: true
+per_device_eval_batch_size: 1
+per_device_train_batch_size: 2
+remove_unused_columns: true
+report_to:
+- wandb
+save_strategy: "epoch"
+save_steps: 1000
+save_total_limit: 3
+seed: 42
+warmup_ratio: 0.1
+output_dir: /projects/data/llmteam/CIA/artifacts/models/hi-aya-8b-v0.5
