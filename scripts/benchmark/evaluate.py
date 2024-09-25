@@ -7,6 +7,7 @@ import re
 import torch
 from vllm import LLM, SamplingParams
 from datasets import load_dataset
+from sklearn.metrics import cohen_kappa_score
 from transformers import AutoTokenizer
 
 lang_map = {
@@ -114,6 +115,12 @@ def calculate_approx_accuracy(predictions):
     accuracy = correct_predictions / total_predictions
     return accuracy
 
+def linear_weighted_kappa(predictions):
+    gold_truths = list(predictions['true_score'])
+    generated_label = list(predictions['generated_text'].apply(stop_after_first_result))
+    kappa = cohen_kappa_score(generated_label, gold_truths, weights='linear')
+    return kappa
+
 def parse_args():
     parser = argparse.ArgumentParser(description="Run inference using VLLM on multiple GPUs and save results to CSV")
     parser.add_argument("--model", type=str, required=True, help="name of the model")
@@ -131,6 +138,7 @@ def main(args):
     
     acc_ = accuracy(predictions)
     approx_acc = calculate_approx_accuracy(predictions)
+    lwk = linear_weighted_kappa(predictions)
     
     os.makedirs(f"{args.output_path}/results/", exist_ok=True)
     with open(f"{args.output_path}/results/{args.lang}-{model_file_name}-result.json", 'w') as f:
@@ -138,7 +146,8 @@ def main(args):
         results = {
             "model": args.model,
             "accuracy": acc_,
-            "approx_accuracy": approx_acc
+            "approx_accuracy": approx_acc,
+            "linear_weigted_kappa": lwk
         }
         print(results)
         json.dump(results, f)
