@@ -218,7 +218,12 @@ def main():
         extra_id = tokenizer.convert_tokens_to_ids(extra)
         tokenizer.pad_token = extra
         tokenizer.pad_token_id = extra_id
-    if "aya" in model_args.model_name_or_path:
+    elif "Llama" in model_args.model_name_or_path:
+        extra = "<|reserved_special_token_0|>"
+        extra_id = tokenizer.convert_tokens_to_ids(extra)
+        tokenizer.pad_token = extra
+        tokenizer.pad_token_id = extra_id
+    elif "aya" in model_args.model_name_or_path:
         pad = "<PAD>"
         pad_id = tokenizer.convert_tokens_to_ids(pad)
         tokenizer.pad_token = pad
