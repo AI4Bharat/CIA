@@ -70,3 +70,18 @@ We require separate environments for training and evaluation due to incompatible
    ```bash
    pip install datasets transformers
    ```
+
+# Citation
+
+If you find the following model helpful, please consider citing our paper!
+
+**BibTeX:**
+
+```bibtex
+@article{doddapaneni2024crosslingual,
+  title   = {Cross-Lingual Auto Evaluation for Assessing Multilingual LLMs},
+  author  = {Sumanth Doddapaneni and Mohammed Safi Ur Rahman Khan and Dilip Venkatesh and Raj Dabre and Anoop Kunchukuttan and Mitesh M. Khapra},
+  year    = {2024},
+  journal = {arXiv preprint arXiv: 2410.13394}
+}
+```
